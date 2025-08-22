@@ -31,17 +31,72 @@ const Dashboard = () => {
       capacity: 500,
       poster: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80'
     },
-    {
-      _id: '3',
-      title: 'Career Fair 2023',
-      date: '2023-12-05',
-      time: '9:00 AM',
-      location: 'College Gymnasium',
-      description: 'Connect with top employers, explore internship and job opportunities, and attend career development workshops.',
-      registrations: 210,
-      capacity: 300,
-      poster: 'https://images.unsplash.com/photo-1560523159-4a9692d222f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'
-    }
+  //   {
+  //     _id: '3',
+  //     title: 'Career Fair 2023',
+  //     date: '2023-12-05',
+  //     time: '9:00 AM',
+  //     location: 'College Gymnasium',
+  //     description: 'Connect with top employers, explore internship and job opportunities, and attend career development workshops.',
+  //     registrations: 210,
+  //     capacity: 300,
+  //     poster: 'https://images.unsplash.com/photo-1560523159-4a9692d222f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'
+  //   },
+  //   {
+  //   _id: '4',
+  //   title: 'Startup Pitch Night',
+  //   date: '2023-12-20',
+  //   time: '6:30 PM',
+  //   location: 'Innovation Hub',
+  //   description: 'Watch budding entrepreneurs pitch their startups to investors and industry experts.',
+  //   registrations: 95,
+  //   capacity: 150,
+  //   poster: 'https://images.unsplash.com/photo-1581091226825-c6a6a76aa654?auto=format&fit=crop&w=1170&q=80'
+  // },
+  {
+    _id: '5',
+    title: 'Hackathon 2023',
+    date: '2023-12-28',
+    time: '8:00 AM',
+    location: 'Computer Science Block',
+    description: 'A 24-hour coding challenge to build innovative solutions with your team.',
+    registrations: 180,
+    capacity: 250,
+    poster: 'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=1170&q=80'
+  },
+  {
+    _id: '6',
+    title: 'Music Night',
+    date: '2023-11-30',
+    time: '7:00 PM',
+    location: 'Open Air Theatre',
+    description: 'Enjoy a night of live music performances by student bands and special guests.',
+    registrations: 420,
+    capacity: 600,
+    poster: 'https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?auto=format&fit=crop&w=1170&q=80'
+  },
+  {
+    _id: '7',
+    title: 'Sports Meet 2023',
+    date: '2023-12-10',
+    time: '9:30 AM',
+    location: 'Sports Ground',
+    description: 'Annual inter-college sports meet featuring athletics, football, cricket, and more competitive games.',
+    registrations: 260,
+    capacity: 400,
+    poster: 'https://images.unsplash.com/photo-1508609349937-5ec4ae374ebf?auto=format&fit=crop&w=1170&q=80'
+  },
+  {
+    _id: '8',
+    title: 'Art & Photography Exhibition',
+    date: '2023-12-12',
+    time: '11:00 AM',
+    location: 'Exhibition Hall',
+    description: 'A showcase of creativity through painting, sketches, and photography by talented students.',
+    registrations: 150,
+    capacity: 200,
+    poster: 'https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=1170&q=80'
+  }
   ];
   
   const mockRegistrations = [
@@ -70,7 +125,8 @@ const Dashboard = () => {
       registrationDate: '2023-10-15',
       attended: true,
       qrCode: 'https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=reg-102'
-    }
+    },
+    
   ];
   
   const mockVolunteerEvents = [

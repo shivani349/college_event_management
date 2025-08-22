@@ -1,6 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
+import CreateEvent from './pages/CreateEvent';
+import ManageVolunteers from './pages/ManageVolunteers';
+
 
 // Context
 import { AuthProvider } from './context/AuthContext';
@@ -17,6 +20,7 @@ import Register from './pages/Register';
 import Events from './pages/Events';
 import EventDetail from './pages/EventDetail';
 import Dashboard from './pages/Dashboard';
+
 
 function App() {
   return (
@@ -48,12 +52,7 @@ function App() {
                 path="/events/create" 
                 element={
                   <ProtectedRoute roles={['organizer', 'admin']}>
-                    <div className="container mt-4">
-                      <h2>Create Event</h2>
-                      <p className="alert alert-info">
-                        Event creation form will be implemented here.
-                      </p>
-                    </div>
+                    <CreateEvent />
                   </ProtectedRoute>
                 } 
               />
@@ -87,7 +86,7 @@ function App() {
               />
               
               {/* Volunteer Routes */}
-              <Route 
+              {/* <Route 
                 path="/scan" 
                 element={
                   <ProtectedRoute roles={['organizer', 'admin', 'volunteer']}>
@@ -99,6 +98,14 @@ function App() {
                     </div>
                   </ProtectedRoute>
                 } 
+              /> */}
+              <Route 
+                path="/volunteers/manage"
+                element={
+                  <ProtectedRoute roles={['organizer', 'admin']}>
+                    <ManageVolunteers />
+                  </ProtectedRoute>
+                }
               />
               
               {/* Unauthorized */}

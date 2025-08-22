@@ -29,8 +29,8 @@ const EventCard = ({ event }) => {
   }, [event._id]);
 
   // Check if user is the organizer
-  const isOrganizer = isAuthenticated && currentUser?._id === event.organizer._id;
-  
+  const isOrganizer = isAuthenticated && currentUser?._id === event.organizer?._id;
+
   // Check if user is admin
   const isAdmin = isAuthenticated && currentUser?.role === 'admin';
 
@@ -53,8 +53,9 @@ const EventCard = ({ event }) => {
         </p>
         
         <div className="d-flex justify-content-between">
+          
           <Link to={`/events/${event._id}`} className="btn btn-primary">
-            View Details
+            View Details....
           </Link>
           
           {(isOrganizer || isAdmin) && (

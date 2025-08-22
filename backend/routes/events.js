@@ -156,7 +156,7 @@ router.delete('/:id',
         return res.status(401).json({ msg: 'Not authorized to delete this event' });
       }
       
-      await event.remove();
+      await event.deleteOne();
       res.json({ msg: 'Event removed' });
     } catch (err) {
       console.error(err.message);
