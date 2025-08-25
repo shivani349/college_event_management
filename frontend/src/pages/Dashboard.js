@@ -18,7 +18,7 @@ const Dashboard = () => {
       description: 'Join us for a day of technology talks, workshops, and networking opportunities with industry professionals.',
       registrations: 145,
       capacity: 200,
-      poster: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'
+      poster: '/api/events/uploads/sample1.jpg'
     },
     {
       _id: '2',
@@ -29,7 +29,7 @@ const Dashboard = () => {
       description: 'A celebration of diverse cultures through music, dance, art, and food. Come experience the vibrant traditions from around the world.',
       registrations: 320,
       capacity: 500,
-      poster: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80'
+      poster: '/api/events/uploads/sample2.jpg'
     },
   //   {
   //     _id: '3',
@@ -62,7 +62,7 @@ const Dashboard = () => {
     description: 'A 24-hour coding challenge to build innovative solutions with your team.',
     registrations: 180,
     capacity: 250,
-    poster: 'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=1170&q=80'
+    poster: '/api/events/uploads/sample5.jpg'
   },
   {
     _id: '6',
@@ -73,7 +73,7 @@ const Dashboard = () => {
     description: 'Enjoy a night of live music performances by student bands and special guests.',
     registrations: 420,
     capacity: 600,
-    poster: 'https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?auto=format&fit=crop&w=1170&q=80'
+    poster: '/api/events/uploads/sample6.jpg'
   },
   {
     _id: '7',
@@ -84,7 +84,7 @@ const Dashboard = () => {
     description: 'Annual inter-college sports meet featuring athletics, football, cricket, and more competitive games.',
     registrations: 260,
     capacity: 400,
-    poster: 'https://images.unsplash.com/photo-1508609349937-5ec4ae374ebf?auto=format&fit=crop&w=1170&q=80'
+    poster: '/api/events/uploads/sample7.jpg'
   },
   {
     _id: '8',
@@ -95,7 +95,7 @@ const Dashboard = () => {
     description: 'A showcase of creativity through painting, sketches, and photography by talented students.',
     registrations: 150,
     capacity: 200,
-    poster: 'https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=1170&q=80'
+    poster: '/api/events/uploads/sample8.jpg'
   }
   ];
   
@@ -989,7 +989,7 @@ const Dashboard = () => {
                             <i className="bi bi-calendar me-1"></i>
                             {new Date(event.date).toLocaleDateString()}
                           </p>
-                          <p className="text-muted mb-0 small">
+                          <p className="text">
                             <i className="bi bi-geo-alt me-1"></i>
                             {event.location}
                           </p>

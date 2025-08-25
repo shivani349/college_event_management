@@ -127,6 +127,8 @@ const EventDetail = () => {
     <div className="container mt-4">
       <div className="row">
         <div className="col-lg-8">
+        <img src={`http://localhost:5000${event.poster?.fileUrl}`} alt={event.title} className="card-img-top" />
+
           <h1>{event.title}</h1>
           
           <div className="mb-4">

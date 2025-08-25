@@ -157,26 +157,7 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-lg-6">
-                <h2 className="display-6 fw-bold mb-3">{featuredEvent.title}</h2>
-                <div className="mb-3">
-                  <span className="badge bg-primary me-2">
-                    {formatDate(featuredEvent.date)}
-                  </span>
-                  <span className="badge bg-secondary me-2">
-                    {featuredEvent.time}
-                  </span>
-                  <span className="badge bg-info">
-                    {featuredEvent.location}
-                  </span>
-                </div>
-                <p className="lead mb-4">{featuredEvent.description}</p>
-                <div className="d-grid gap-2 d-md-flex">
-                  <Link to={`/events/${featuredEvent._id}`} className="btn btn-primary">
-                    View Details
-                  </Link>
-                </div>
-              </div>
+              
             </div>
           </div>
         </div>

@@ -6,7 +6,7 @@ const authRoutes = require('./routes/auth');
 const eventRoutes = require('./routes/events');
 const registrationRoutes = require('./routes/registrations');
 const attendanceRoutes = require('./routes/attendance');
-
+const path = require('path');
 // Load environment variables
 dotenv.config();
 
@@ -23,6 +23,8 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/college-e
   .catch(err => console.error('MongoDB connection error:', err));
 
 // Routes
+app.use('/api/events/uploads', express.static(path.join(__dirname, 'uploads')));
+
 app.use('/api/auth', authRoutes);
 app.use('/api/events', eventRoutes);
 app.use('/api/registrations', registrationRoutes);

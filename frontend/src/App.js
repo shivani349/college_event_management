@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import './App.css';
 import CreateEvent from './pages/CreateEvent';
 import ManageVolunteers from './pages/ManageVolunteers';
-
+import EditEvent from './pages/EditEvent';
 
 // Context
 import { AuthProvider } from './context/AuthContext';
@@ -61,12 +61,7 @@ function App() {
                 path="/events/edit/:id" 
                 element={
                   <ProtectedRoute roles={['organizer', 'admin']}>
-                    <div className="container mt-4">
-                      <h2>Edit Event</h2>
-                      <p className="alert alert-info">
-                        Event editing form will be implemented here.
-                      </p>
-                    </div>
+                    <EditEvent />
                   </ProtectedRoute>
                 } 
               />

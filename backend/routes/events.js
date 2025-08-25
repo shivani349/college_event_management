@@ -1,15 +1,32 @@
 const express = require('express');
 const router = express.Router();
 const multer = require('multer');
+const path = require('path');
+
 const Event = require('../models/Event');
 const { authenticate, authorize } = require('../middleware/auth');
+const fs = require('fs');
+
+const uploadsDir = path.join(__dirname, '../uploads');
+if (!fs.existsSync(uploadsDir)) {
+  fs.mkdirSync(uploadsDir, { recursive: true });
+}
 
 // Set up multer for file uploads
-const storage = multer.memoryStorage();
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, path.join(__dirname, '../uploads'));
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + '-' + file.originalname);
+  }
+});
+
 const upload = multer({ 
   storage,
-  limits: { fileSize: 5 * 1024 * 1024 } // 5MB limit
+  limits: { fileSize: 5 * 1024 * 1024 } // 5MB
 });
+
 
 // @route   GET api/events
 // @desc    Get all events
@@ -59,8 +76,7 @@ router.post('/',
   async (req, res) => {
     try {
       const { title, description, date, time, location, capacity } = req.body;
-      
-      // Create new event
+
       const newEvent = new Event({
         title,
         description,
@@ -70,15 +86,15 @@ router.post('/',
         capacity,
         organizer: req.user.id
       });
-      
-      // Add poster if uploaded
+
       if (req.file) {
         newEvent.poster = {
-          data: req.file.buffer,
-          contentType: req.file.mimetype
+          fileName: req.file.filename,
+          fileUrl: `/api/events/uploads/${req.file.filename}`,
+          uploadedAt: new Date()
         };
       }
-      
+
       const event = await newEvent.save();
       res.json(event);
     } catch (err) {
@@ -119,11 +135,12 @@ router.put('/:id',
       
       // Update poster if uploaded
       if (req.file) {
-        event.poster = {
-          data: req.file.buffer,
-          contentType: req.file.mimetype
-        };
-      }
+  event.poster = {
+    fileName: req.file.filename,
+    fileUrl: `/api/events/uploads/${req.file.filename}`,
+    uploadedAt: new Date()
+  };
+}
       
       await event.save();
       res.json(event);

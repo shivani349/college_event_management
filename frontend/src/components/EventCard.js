@@ -37,6 +37,7 @@ const EventCard = ({ event }) => {
   return (
     <div className="card mb-4">
       <div className="card-body">
+        <img src={`http://localhost:5000${event.poster?.fileUrl}`} alt={event.title} className="card-img-top" />
         <h5 className="card-title">{event.title}</h5>
         <h6 className="card-subtitle mb-2 text-muted">
           {formatDate(event.date)} at {event.time}

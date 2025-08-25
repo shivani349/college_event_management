@@ -30,10 +30,12 @@ const EventSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
-  poster: {
-    data: Buffer,
-    contentType: String
-  },
+poster: {
+  fileName: String,
+  fileUrl: String,
+  uploadedAt: Date
+},
+
   volunteers: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User'
